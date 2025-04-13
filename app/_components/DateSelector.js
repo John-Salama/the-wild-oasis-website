@@ -15,8 +15,9 @@ function isAlreadyBooked(range, datesArr) {
   );
 }
 
-function DateSelector({ settings, bookedDates, cabin }) {
+function DateSelector({ settings, cabin, bookedDates }) {
   const { range, setRange, resetRange } = useReservation();
+
   // CHANGE
   const regularPrice = 23;
   const discount = 23;
@@ -30,9 +31,9 @@ function DateSelector({ settings, bookedDates, cabin }) {
     <div className="flex flex-col justify-between">
       <DayPicker
         className="pt-12 place-self-center"
+        mode="range"
         onSelect={setRange}
         selected={range}
-        mode="range"
         min={minBookingLength + 1}
         max={maxBookingLength}
         fromMonth={new Date()}

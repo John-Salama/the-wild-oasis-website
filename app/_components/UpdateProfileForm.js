@@ -1,5 +1,10 @@
 "use client";
+
+import { useState } from "react";
+
 function UpdateProfileForm({ children }) {
+  const [count, setCount] = useState();
+
   // CHANGE
   const countryFlag = "pt.jpg";
   const nationality = "portugal";
